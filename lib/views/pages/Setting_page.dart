@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_3/views/pages/ExpendedFlexible.dart';
 import 'package:practice_3/views/widgets/hero_widget.dart';
 
 class SettingPage extends StatefulWidget {
@@ -203,8 +204,13 @@ class _SettingPageState extends State<SettingPage> {
               ),
 
               FilledButton(
-                onPressed: () {},
-                child: Text("Click me!"),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Expendedflexible()),
+                  );
+                },
+                child: Text("Expanded and Flexible"),
               ),
 
               TextButton(

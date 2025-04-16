@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_3/data/constant.dart';
+import 'package:practice_3/views/pages/PeterPage.dart';
 import 'package:practice_3/views/widgets/container_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -37,13 +38,21 @@ class HomePage extends StatelessWidget {
               alignment: Alignment.center, // You can also use Alignment.bottomCenter or topCenter
               children: [
                 // Background image
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10), // Optional: rounded corners
-                  child: Image.asset(
-                    'assets/images/peter.jpg',
-                    fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Peterpage())
+                        );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10), // Optional: rounded corners
+                      child: Image.asset(
+                        'assets/images/peter.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                ),
 
                 // Text overlay
                 Container(
