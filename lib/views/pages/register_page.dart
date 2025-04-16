@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:practice_3/views/pages/welcome_page.dart';
 
 class Register extends StatelessWidget {
@@ -26,6 +27,9 @@ class Register extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+
+              Lottie.asset('assets/lotties/welcome.json', height: 250),
+
               const SizedBox(height: 30),
 
               // Full Name

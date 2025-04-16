@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:practice_3/data/constant.dart';
 import 'package:practice_3/data/notifiers.dart';
 import 'package:practice_3/views/pages/Setting_page.dart';
 import 'package:practice_3/views/pages/home_page.dart';
 import 'package:practice_3/views/pages/profile_page.dart';
 import 'package:practice_3/views/widgets/navbar_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 List<Widget> pages = [
   HomePage(),
@@ -28,8 +30,11 @@ class WidgetTree  extends StatelessWidget {
             automaticallyImplyLeading: false,
             centerTitle: false,
             actions: [
-              IconButton(onPressed: (){
+              IconButton(onPressed: () async{
                   isDarkNotifier.value = !isDarkNotifier.value;
+                  final SharedPreferences prefs = await SharedPreferences.getInstance();
+                  await prefs.setBool(Kconstant.themeModeKey, isDarkNotifier.value);
+
               },
                   icon: ValueListenableBuilder(valueListenable: isDarkNotifier,
                       builder: (context,isDarkMode,child) {
